@@ -3,6 +3,8 @@
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-  --color-primary: #FF3811;
-  /* --color-secondary: teal; */
+  --color-primary: #ff3811;
+}
+@theme{
+  --color-Dark-03: #737373;
 }
