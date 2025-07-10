@@ -5,6 +5,9 @@
   default: true;
   --color-primary: #ff3811;
 }
-@theme{
+@theme {
+  --color-Dark-01: #151515;
+  --color-Dark-02: #444444;
   --color-Dark-03: #737373;
+  --color-Dark-06: #E8E8E8;
 }
