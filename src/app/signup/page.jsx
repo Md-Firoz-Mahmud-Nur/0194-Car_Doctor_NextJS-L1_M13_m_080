@@ -6,7 +6,25 @@ import React from "react";
 
 const Login = () => {
   const handleSignup = async (event) => {
-    console.log("login");
+    event.preventDefault();
+    const form = event.target;
+    const newUser = {
+      name: form.name.value,
+      email: form.email.value,
+      password: form.password.value,
+    };
+    console.log(newUser);
+    const response = await fetch("http://localhost:3000/signup/api", {
+      method: "POST",
+      body: JSON.stringify(newUser),
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+    console.log(response);
+    if (response.status === 200) {
+      event.target.reset();
+    }
   };
   return (
     <div className="container mx-auto px-24 py-24">
@@ -30,7 +48,7 @@ const Login = () => {
 
             <input
               type="password"
-              name="password"
+              name="name"
               placeholder="Your name"
               className="input input-bordered border-Dark-06 placeholder:text-Dark-04 input-xl mt-5 w-full rounded-lg px-6 py-4"
             />
