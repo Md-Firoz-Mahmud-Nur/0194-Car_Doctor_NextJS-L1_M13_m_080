@@ -1,3 +1,4 @@
+import SocialIcons from "@/components/shared/SocialIcons";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -12,8 +13,8 @@ const Login = () => {
         <div>
           <Image
             src="/assets/images/login/login.svg"
-            height="540"
-            width="540"
+            height={502}
+            width={460}
             alt="login image"
           />
         </div>
@@ -27,7 +28,7 @@ const Login = () => {
               type="text"
               name="email"
               placeholder="Your email"
-              className="input input-bordered border-Dark-06 placeholder:text-Dark-04 mt-5 w-full rounded-lg px-6 py-4 input-xl"
+              className="input input-bordered border-Dark-06 placeholder:text-Dark-04 input-xl mt-5 w-full rounded-lg px-6 py-4"
             />
 
             <div className="mt-5">
@@ -40,20 +41,22 @@ const Login = () => {
               type="password"
               name="password"
               placeholder="Your password"
-              className="input input-bordered border-Dark-06 placeholder:text-Dark-04 mt-5 w-full rounded-lg px-6 py-4 input-xl"
+              className="input input-bordered border-Dark-06 placeholder:text-Dark-04 input-xl mt-5 w-full rounded-lg px-6 py-4"
             />
             <button
               type="submit"
-              className="btn btn-primary mt-7 w-full rounded-lg text-lg"
+              className="btn btn-primary mt-7 h-16 w-full rounded-lg text-xl leading-7 font-semibold"
             >
               Sign In
             </button>
           </form>
           <div>
-            <h6 className="my-12 text-center">or sign in with</h6>
-            facebook
-            <h6 className="my-12 text-center">
-              not have account ?{" "}
+            <h6 className="text-Dark-02 my-7 text-center text-lg font-medium capitalize">
+              or sign in with
+            </h6>
+            <SocialIcons></SocialIcons>
+            <h6 className="text-Dark-03 mt-12 text-center text-lg capitalize">
+              Have an account?{" "}
               <Link className="text-primary font-semibold" href={"/signup"}>
                 Sign Up
               </Link>
