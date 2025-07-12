@@ -1,8 +1,12 @@
+"use client";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const Navbar = () => {
+  const session = useSession();
+  console.log(session);
   const navItems = [
     {
       title: "Home",
@@ -88,6 +92,20 @@ const Navbar = () => {
         <a className="btn btn-outline btn-primary px-7 py-4 text-lg font-semibold">
           Appointment
         </a>
+        {session?.status === "loading" && <h6>Loading....</h6>}
+        {session?.status === "unauthenticated" && (
+          <Link href="/login" className="btn btn-primary ml-4 px-8">
+            Login
+          </Link>
+        )}
+        {session?.status === "authenticated" && (
+          <button
+            className="btn btn-primary ml-4 px-8"
+            onClick={() => signOut()}
+          >
+            Logout
+          </button>
+        )}
       </div>
     </div>
   );

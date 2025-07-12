@@ -13,7 +13,7 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
-    const response = signIn("credentials", {
+    const response = await signIn("credentials", {
       email,
       password,
       redirect: false,
