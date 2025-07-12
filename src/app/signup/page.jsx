@@ -1,5 +1,5 @@
 "use client";
-import SocialIcons from "@/components/shared/SocialIcons";
+import SocialSignIn from "@/components/shared/SocialSignIn";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -87,7 +87,7 @@ const Signup = () => {
             <h6 className="text-Dark-02 my-7 text-center text-lg font-medium capitalize">
               or sign up with
             </h6>
-            <SocialIcons></SocialIcons>
+            <SocialSignIn></SocialSignIn>
             <h6 className="text-Dark-03 mt-12 text-center text-lg capitalize">
               already Have an account?{" "}
               <Link className="text-primary font-semibold" href={"/login"}>

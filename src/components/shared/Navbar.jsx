@@ -92,6 +92,17 @@ const Navbar = () => {
         <a className="btn btn-outline btn-primary px-7 py-4 text-lg font-semibold">
           Appointment
         </a>
+        {session?.data && (
+          <div>
+            <Image
+              alt={session?.data?.user?.name}
+              src={session?.data?.user?.image}
+              height={50}
+              width={50}
+              className="ml-4 rounded-full"
+            />
+          </div>
+        )}
         {session?.status === "loading" && <h6>Loading....</h6>}
         {session?.status === "unauthenticated" && (
           <Link href="/login" className="btn btn-primary ml-4 px-8">
