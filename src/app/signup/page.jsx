@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Login = () => {
+const Signup = () => {
   const handleSignup = async (event) => {
     event.preventDefault();
     const form = event.target;
@@ -101,4 +101,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
