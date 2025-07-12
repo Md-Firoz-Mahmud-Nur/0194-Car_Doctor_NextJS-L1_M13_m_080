@@ -3,10 +3,22 @@ import SocialIcons from "@/components/shared/SocialIcons";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { signIn } from "next-auth/react";
 
 const Login = () => {
   const handleLogin = async (event) => {
     console.log("login");
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+    const response = signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+    });
+    console.log(response);
   };
   return (
     <div className="container mx-auto px-24 py-24">
